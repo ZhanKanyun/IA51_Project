@@ -19,6 +19,10 @@ public class Location {
   
   public int close_time;
   
+  public Location(final String name) {
+    this.name = name;
+  }
+  
   public Location(final String name, final int open_time, final int close_time) {
     this.name = name;
     this.open_time = open_time;

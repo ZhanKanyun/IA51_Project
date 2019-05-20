@@ -14,17 +14,17 @@ import org.eclipse.xtext.xbase.lib.Pure;
 @SarlElementType(10)
 @SuppressWarnings("all")
 public class Trip {
-  private int id;
+  public int id;
   
-  private Location origin_name;
+  public Location origin_name;
   
-  private int start_time;
+  public int start_time;
   
-  private int duration;
+  public int duration;
   
-  private Location destination;
+  public Location destination;
   
-  private Transport_Mode mode;
+  public Transport_Mode mode;
   
   /**
    * constructor

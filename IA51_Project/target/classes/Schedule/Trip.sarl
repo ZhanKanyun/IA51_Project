@@ -10,12 +10,12 @@ import java.util.Date
  * 
  */
 class Trip extends Object {
-	var id : int
-	var origin_name : Location
-	var start_time : int
-	var duration : int
-	var destination : Location
-	var mode : Transport_Mode
+	public var id : int
+	public var origin_name : Location
+	public var start_time : int
+	public var duration : int
+	public var destination : Location
+	public var mode : Transport_Mode
 
 	/* constructor */
 

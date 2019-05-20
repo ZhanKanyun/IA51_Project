@@ -74,6 +74,7 @@ class ReadXml{
 							 Node attr_trip = attrs_trip.item(m);
 							 System.out.print("The name of attribute: " + attr_trip.getNodeName()+"\n");
 							 System.out.println("The value of attribute: " + attr_trip.getNodeValue()+"\n");
+							
 						 }
 						 //Traversing all childNode of Trip
 						 NodeList childNodes_trip = trip.getChildNodes();
@@ -83,6 +84,22 @@ class ReadXml{
 								 System.out.print("The name of " + (n + 1) + "chileNode is: " + childNodes_trip.item(n).getNodeName()+"\n");
 								 System.out.println("The value of childNode is: " + childNodes_trip.item(n).getFirstChild().getNodeValue()+"\n");
 							 }
+							 switch(n){
+						        case 2:
+						        	Location origin_name = new Location(childNodes_trip.item(n).getFirstChild().getNodeValue());
+						        	trip_cur. origin_name = origin_name;break;
+						        case 4:
+						            trip_cur.start_time = Integer.parseInt(childNodes_trip.item(n).getFirstChild().getNodeValue()); break;
+						        case 6:
+						        	trip_cur.duration = Integer.parseInt(childNodes_trip.item(n).getFirstChild().getNodeValue());break;
+						        case 8:
+						        	Location destination = new Location(childNodes_trip.item(n).getFirstChild().getNodeValue());
+						        	trip_cur.destination = destination;break;
+						        case 10:
+						        	
+						        }
+
+							 
 						 }
 						 
 					 }
@@ -96,7 +113,10 @@ class ReadXml{
 						 for(int m = 0; m < attrs_activity.getLength(); m++) {
 							 Node attr_activity = attrs_activity.item(m);
 							 System.out.print("The name of attribute: " + attr_activity.getNodeName()+"\n");
+							 System.out.print(getType(attr_activity.getNodeName()));
 							 System.out.println("The value of attribute: " + attr_activity.getNodeValue()+"\n");
+							 
+							 
 						 }
 						 //Traversing all child_node of Trip
 						 NodeList childNodes_activity = activity.getChildNodes();
@@ -124,5 +144,8 @@ class ReadXml{
 		
 	}
 	
+	public static String getType(Object o){ 
+		return o.getClass().toString(); 
+	}
 
 }

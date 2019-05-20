@@ -14,6 +14,9 @@ class Location extends Object {
 	public var open_time : int
 	public var close_time : int
 	
+	new(name : String){
+		this.name = name
+	}
 	
 	new(name : String, open_time : int, close_time : int) {
 		this.name = name
